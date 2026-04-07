@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dataset outputs (large files)
+agent_dataset.jsonl
+agent_dataset_test.jsonl
+real_dataset.jsonl
+real_dataset_mlx.jsonl
+real_dataset_mlx_chat.jsonl
+mlx_data/
+unsloth_data/
+test_mlx.jsonl
+
+# MLX artifacts
+qwen3-agent-finetune-mac/
+qwen3-agent-fused-mac/
+test_adapter/
+*.gguf
+*.safetensors
+
+# Unsloth artifacts (PC training)
+qwen3-agent-finetune/
+qwen3-agent-finetune-v2/
+runs/
+checkpoint-*/
+
+# Large submodules
+llama.cpp/
+
+# Logs
+*.log
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+HF_TOKEN
+OPENROUTER_API_KEY
