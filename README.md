@@ -20,34 +20,39 @@ localagent/
 ├── Modelfile                 # Ollama model definition
 ├── tests/
 │   └── test_integration.py  # Real integration tests (no mocks)
-├── PC_README.md              # Detailed PC training instructions
+├── WINDOWS.md                # Windows PC training instructions
+├── PC_README.md              # Linux PC training instructions
 └── PC_TRAINING_WORKFLOW.md   # Cross-platform workflow guide
 ```
 
 ## 🚀 Quick Start
 
-### Option 1: Train on PC (Recommended - Faster)
+### Option 1: Train on Windows PC (Recommended - Fastest)
 
-**Hardware:** PC with RTX 3060 12GB VRAM + 32GB RAM
+**Hardware:** Windows PC with RTX 3060 12GB VRAM + 32GB RAM
 **Time:** 2-4 hours
 
-1. **Extract your conversations** (Mac):
-   ```bash
-   python3 extract_claude_logs.py --output real_dataset.jsonl
-   ```
+📖 **See [WINDOWS.md](WINDOWS.md) for complete step-by-step instructions**
 
-2. **Prepare dataset** (Mac):
-   ```bash
-   python3 prepare_pc_data.py
-   ```
+Quick overview:
+1. Extract conversations on Mac: `python3 extract_claude_logs.py`
+2. Prepare dataset: `python3 prepare_pc_data.py`
+3. Copy to Windows PC
+4. Install dependencies: `pip install "unsloth[cu121]" --extra-index-url https://download.pytorch.org/whl/cu121`
+5. Run training: `python train.py`
 
-3. **Copy to PC** and train:
-   ```bash
-   # On PC:
-   pip install "unsloth[cu121]" --extra-index-url https://download.pytorch.org/whl/cu121
-   pip install trl transformers datasets accelerate
-   python train.py
-   ```
+### Option 2: Train on Linux PC
+
+**Hardware:** Linux PC with NVIDIA GPU
+**Time:** 2-4 hours
+
+📖 **See [PC_README.md](PC_README.md) for instructions**
+
+### Option 3: Train on Mac (Proof of Concept)
+
+**Hardware:** Mac M4 16GB unified memory
+**Time:** 6-8 hours
+**Note:** Slower and memory-constrained. Use PC for production training.
 
 4. **Export to GGUF** (PC):
    ```bash
