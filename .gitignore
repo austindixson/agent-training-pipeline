@@ -1,73 +1,38 @@
+# Large datasets (use split versions)
+real_dataset.jsonl
+mlx_data/dataset.json
+mlx_data/dataset_chunked.json
+mlx_data/train.jsonl
+mlx_data/valid.jsonl
+mlx_data/test.jsonl
+
+# Keep split datasets
+!real_dataset_split/*.jsonl
+!mlx_data/jsonl_chunked/*.jsonl
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
+dist/
+build/
 
-# Virtual environments
-venv/
-ENV/
-env/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Dataset outputs (large files)
-agent_dataset.jsonl
-agent_dataset_test.jsonl
-real_dataset.jsonl
-real_dataset_mlx.jsonl
-real_dataset_mlx_chat.jsonl
-mlx_data/
-unsloth_data/
-test_mlx.jsonl
-
-# MLX artifacts
-qwen3-agent-finetune-mac/
-qwen3-agent-fused-mac/
-test_adapter/
-*.gguf
+# MLX/ML
 *.safetensors
-
-# Unsloth artifacts (PC training)
-qwen3-agent-finetune/
-qwen3-agent-finetune-v2/
-runs/
-checkpoint-*/
-
-# Large submodules
-llama.cpp/
+*.gguf
+*.npz
+*/adapters/
 
 # Logs
 *.log
-/tmp/
+training_*.log
+
+# Cache
+.cache/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Environment
-.env
-.env.local
-HF_TOKEN
-OPENROUTER_API_KEY

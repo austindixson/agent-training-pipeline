@@ -1,0 +1,11 @@
+# Dataset files - use Git LFS
+real_dataset.jsonl filter=lfs diff=lfs merge=lfs -text
+mlx_data/dataset.json filter=lfs diff=lfs merge=lfs -text
+mlx_data/dataset_chunked.json filter=lfs diff=lfs merge=lfs -text
+mlx_data/jsonl/*.jsonl filter=lfs diff=lfs merge=lfs -text
+mlx_data/jsonl_chunked/*.jsonl filter=lfs diff=lfs merge=lfs -text
+# Model files
+*.gguf filter=lfs diff=lfs merge=lfs -text
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+mlx_data/*.json filter=lfs diff=lfs merge=lfs -text
+real_dataset_split/*.jsonl filter=lfs diff=lfs merge=lfs -text
