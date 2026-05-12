@@ -36,3 +36,4 @@ training_*.log
 # OS
 .DS_Store
 Thumbs.db
+docs/remotion/node_modules/

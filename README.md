@@ -136,3 +136,18 @@ MIT
 - **MLX** — Apple Silicon ML framework
 - **Qwen** — Base model from Alibaba Cloud
 - **Ollama** — Local model inference
+
+## Visual Overview
+
+![Install flow](docs/assets/install-flow.png)
+
+![Setup flow](docs/assets/setup-flow.png)
+
+To regenerate these visuals:
+
+```bash
+cd docs/remotion
+npm install
+npm run render:all
+```
+
