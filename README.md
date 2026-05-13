@@ -2,6 +2,63 @@
 
 Train your own local AI agent that uses tools (Bash, Read, Write, etc.) by fine-tuning Qwen models on real conversation data.
 
+## Installation
+
+2) Clone and enter the repo
+```bash
+git clone <repo-url>
+cd <repo-name>
+```
+
+## Quick Start
+
+```bash
+# See repository-specific setup below
+```
+
+## Usage Examples
+
+- Run default training workflow
+```bash
+python scripts/train.py  # adjust config path
+```
+
+## Implementation Overview
+
+This repository is implemented primarily in **Mixed** and organized around explicit runtime entrypoints plus supporting modules.
+
+### Key Directories
+
+- `docs/`
+- `hybrid_dataset/`
+- `mlx_data/`
+- `real_dataset_split/`
+- `tests/`
+
+### Key Files
+
+- `README.md`
+
+### Entrypoints
+
+- `extract_claude_logs.py`
+- `generate_agent_dataset.py`
+- `generate_hybrid_dataset.py`
+- `generate_synthetic_data.py`
+- `merge_gguf.py`
+
+## Troubleshooting
+
+- If startup fails, run the primary command with verbose flags and capture stderr logs.
+- If dependencies conflict, remove lock artifacts and reinstall in a clean shell.
+- If tests fail intermittently, run a single test target first, then full suite.
+- Ensure environment variables are loaded before running build/train commands.
+
+## Visual Overview
+
+![agent-training-pipeline visual overview](docs/assets/visual-overview-agent-training-pipeline.svg)
+
+
 ## 🎯 What This Does
 
 - **Extracts** real agent conversations from your Claude Code sessions
@@ -136,8 +193,3 @@ MIT
 - **MLX** — Apple Silicon ML framework
 - **Qwen** — Base model from Alibaba Cloud
 - **Ollama** — Local model inference
-
-## Visual Overview
-
-![agent-training-pipeline visual overview](docs/assets/visual-overview-agent-training-pipeline.svg)
-
