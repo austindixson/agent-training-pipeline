@@ -4,55 +4,48 @@ Train your own local AI agent that uses tools (Bash, Read, Write, etc.) by fine-
 
 ## Installation
 
-2) Clone and enter the repo
 ```bash
-git clone <repo-url>
-cd <repo-name>
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+pip install unsloth trl transformers datasets peft accelerate
 ```
 
 ## Quick Start
 
 ```bash
-# See repository-specific setup below
+python train.py
 ```
 
 ## Usage Examples
 
-- Run default training workflow
+- Train default local agent model
 ```bash
-python scripts/train.py  # adjust config path
+python train.py
+```
+
+- Mac MLX path (Gemma 4 e2b)
+```bash
+bash train_mac_gemma4.sh
+```
+
+- Monitor active training logs
+```bash
+bash monitor_training.sh
 ```
 
 ## Implementation Overview
 
-This repository is implemented primarily in **Mixed** and organized around explicit runtime entrypoints plus supporting modules.
-
-### Key Directories
-
-- `docs/`
-- `hybrid_dataset/`
-- `mlx_data/`
-- `real_dataset_split/`
-- `tests/`
-
-### Key Files
-
-- `README.md`
-
-### Entrypoints
-
-- `extract_claude_logs.py`
-- `generate_agent_dataset.py`
-- `generate_hybrid_dataset.py`
-- `generate_synthetic_data.py`
-- `merge_gguf.py`
+- `train.py` is the main QLoRA training entrypoint for the local-agent dataset flow.
+- `train_mac_*.sh` scripts provide hardware-specific launch paths (Mac-focused variants).
+- `hybrid_dataset/`, `mlx_data/`, and `real_dataset_split/` hold curated training corpora.
+- `tests/` and docs files define integration checks and data/format expectations.
 
 ## Troubleshooting
 
-- If startup fails, run the primary command with verbose flags and capture stderr logs.
-- If dependencies conflict, remove lock artifacts and reinstall in a clean shell.
-- If tests fail intermittently, run a single test target first, then full suite.
-- Ensure environment variables are loaded before running build/train commands.
+- If training stalls, inspect dataset path assumptions and ensure JSONL format consistency.
+- If OOM occurs on local hardware, reduce context length and effective batch size first.
+- If merged outputs fail downstream, verify adapter/base-model compatibility before export.
 
 ## Visual Overview
 
