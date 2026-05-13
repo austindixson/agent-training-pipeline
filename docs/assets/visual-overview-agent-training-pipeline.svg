@@ -1,1 +1,34 @@
-<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg"><rect width="1600" height="900" fill="#0B1220"/><text x="100" y="120" fill="#F8FAFC" font-size="60" font-family="Inter" font-weight="700">agent-training-pipeline</text><text x="100" y="178" fill="#94A3B8" font-size="28" font-family="Inter">Visual Overview</text><line x1="140" y1="450" x2="1460" y2="450" stroke="#22C55E" stroke-width="6"/><circle cx="220" cy="450" r="18" fill="#22C55E"/><circle cx="520" cy="450" r="18" fill="#22C55E"/><circle cx="820" cy="450" r="18" fill="#22C55E"/><circle cx="1120" cy="450" r="18" fill="#22C55E"/><circle cx="1420" cy="450" r="18" fill="#22C55E"/><text x="170" y="390" fill="#D1FAE5" font-size="24" font-family="Inter">Extract</text><text x="470" y="390" fill="#D1FAE5" font-size="24" font-family="Inter">Prepare</text><text x="770" y="390" fill="#D1FAE5" font-size="24" font-family="Inter">Train</text><text x="1065" y="390" fill="#D1FAE5" font-size="24" font-family="Inter">Validate</text><text x="1365" y="390" fill="#D1FAE5" font-size="24" font-family="Inter">Export</text><text x="150" y="560" fill="#86EFAC" font-size="20" font-family="JetBrains Mono">Runtime: local finetune pipeline</text><text x="150" y="595" fill="#86EFAC" font-size="20" font-family="JetBrains Mono">Core: dataset prep + QLoRA training</text><text x="150" y="630" fill="#86EFAC" font-size="20" font-family="JetBrains Mono">Surface: scripted cross-hardware runs</text></svg>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent Training Pipeline visual overview">
+<defs>
+  <clipPath id="clipL"><rect x="130" y="340" width="380" height="370" rx="12"/></clipPath>
+  <clipPath id="clipM"><rect x="610" y="340" width="380" height="370" rx="12"/></clipPath>
+  <clipPath id="clipR"><rect x="1090" y="340" width="380" height="370" rx="12"/></clipPath>
+</defs>
+<rect width="1600" height="900" fill="#0B1220"/>
+<text x="100" y="118" fill="#F8FAFC" font-size="58" font-family="Inter, Segoe UI, Arial" font-weight="700">Agent Training Pipeline</text>
+<text x="100" y="170" fill="#94A3B8" font-size="28" font-family="Inter, Segoe UI, Arial">Visual Overview</text>
+<line x1="100" y1="205" x2="1500" y2="205" stroke="#22C55E" stroke-width="3"/>
+<rect x="100" y="250" width="1400" height="560" rx="24" fill="#101826" stroke="#334155"/>
+<rect x="130" y="300" width="380" height="470" rx="18" fill="#131E2E" stroke="#243447"/>
+<rect x="610" y="300" width="380" height="470" rx="18" fill="#131E2E" stroke="#243447"/>
+<rect x="1090" y="300" width="380" height="470" rx="18" fill="#131E2E" stroke="#243447"/>
+<text x="158" y="350" fill="#E2E8F0" font-size="28" font-family="Inter, Segoe UI, Arial" font-weight="600">Architecture</text>
+<text x="638" y="350" fill="#E2E8F0" font-size="28" font-family="Inter, Segoe UI, Arial" font-weight="600">Execution</text>
+<text x="1118" y="350" fill="#E2E8F0" font-size="28" font-family="Inter, Segoe UI, Arial" font-weight="600">Operational Notes</text>
+<g clip-path="url(#clipL)">
+  <text x="158" y="395" fill="#93C5FD" font-size="20" font-family="JetBrains Mono, Menlo, monospace">• Runtime: local finetune</text>
+  <text x="158" y="432" fill="#93C5FD" font-size="20" font-family="JetBrains Mono, Menlo, monospace">• Core: dataset + QLoRA</text>
+  <text x="158" y="469" fill="#93C5FD" font-size="20" font-family="JetBrains Mono, Menlo, monospace">• Ops: cross-hardware scripts</text>
+</g>
+<g clip-path="url(#clipM)">
+  <text x="638" y="395" fill="#A7F3D0" font-size="21" font-family="Inter, Segoe UI, Arial">1. Install deps and verify env</text>
+  <text x="638" y="435" fill="#A7F3D0" font-size="21" font-family="Inter, Segoe UI, Arial">2. Run primary command path</text>
+  <text x="638" y="475" fill="#A7F3D0" font-size="21" font-family="Inter, Segoe UI, Arial">3. Validate via tests/checks</text>
+  <text x="638" y="515" fill="#A7F3D0" font-size="21" font-family="Inter, Segoe UI, Arial">4. Capture logs + iterate</text>
+</g>
+<g clip-path="url(#clipR)">
+  <text x="1118" y="395" fill="#FDE68A" font-size="21" font-family="Inter, Segoe UI, Arial">- keep commands reproducible</text>
+  <text x="1118" y="435" fill="#FDE68A" font-size="21" font-family="Inter, Segoe UI, Arial">- validate from clean session</text>
+  <text x="1118" y="475" fill="#FDE68A" font-size="21" font-family="Inter, Segoe UI, Arial">- document real failure modes</text>
+</g>
+</svg>
