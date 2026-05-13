@@ -2,6 +2,49 @@
 
 Train your own local AI agent that uses tools (Bash, Read, Write, etc.) by fine-tuning Qwen models on real conversation data.
 
+## Presentation Framework (Proven README Pattern)
+
+### TL;DR
+Local agent fine-tuning workflow: dataset prep, QLoRA training, and export across hardware profiles.
+
+### Why this project
+- Solves a concrete workflow problem with reproducible command paths.
+- Prioritizes operator reliability over demo-only output.
+- Structured for practical use, not just conceptual documentation.
+
+### Quick Start
+```bash
+python train.py
+```
+
+### Installation
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+pip install unsloth trl transformers datasets peft accelerate
+```
+
+### Usage Examples
+```bash
+python train.py
+bash train_mac_gemma4.sh
+bash monitor_training.sh
+```
+
+### Architecture at a glance
+- train.py — primary local training entrypoint
+- train_mac_*.sh — machine-specific training profiles
+- hybrid_dataset/ + mlx_data/ — curated corpora and formatted splits
+
+### Troubleshooting
+- If OOM, reduce batch size/context length first.
+- If merge/export fails, verify adapter/base model compatibility.
+
+### Project status
+Optimize reproducibility and consistency across local + GPU-backed runs.
+
+
 ## Installation
 
 ```bash
@@ -186,3 +229,11 @@ MIT
 - **MLX** — Apple Silicon ML framework
 - **Qwen** — Base model from Alibaba Cloud
 - **Ollama** — Local model inference
+
+## Contributing
+
+Contributions are welcome. Open an issue first for significant changes, then submit a focused PR with reproducible validation steps.
+
+## License
+
+License details are documented in this repository.
