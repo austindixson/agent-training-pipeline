@@ -139,15 +139,5 @@ MIT
 
 ## Visual Overview
 
-![Install flow](docs/assets/install-flow.png)
-
-![Setup flow](docs/assets/setup-flow.png)
-
-To regenerate these visuals:
-
-```bash
-cd docs/remotion
-npm install
-npm run render:all
-```
+![agent-training-pipeline visual overview](docs/assets/visual-overview-agent-training-pipeline.svg)
 
